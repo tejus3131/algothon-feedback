@@ -53,7 +53,7 @@ export default function AdminPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   interface Feedback {
     id: number;
-    feedback_text: string;
+    feedback: string;
     created_at: string;
     checked: boolean;
   }
@@ -145,7 +145,7 @@ export default function AdminPage() {
               key={feedback.id}
               className={`p-4 border rounded-md ${feedback.checked ? 'bg-green-100' : 'bg-gray-100'}`}
             >
-              <p className="text-lg">{feedback.feedback_text}</p>
+              <p className="text-lg">{feedback.feedback}</p>
               <p className="text-sm text-gray-500 mt-2">Submitted on: {new Date(feedback.created_at).toLocaleString()}</p>
 
               <div className="mt-4 flex gap-2">
